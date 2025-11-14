@@ -23,12 +23,6 @@ header {
   transform-origin: top left;
 }
 
-@media (max-width: 380px) {
-  .skew-box {
-    min-height: 80vh;
-  }
-}
-
 picture {
   position: absolute;
   margin: 30px;
@@ -157,7 +151,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 5%;
-  min-height: 500px;
+  min-height: 600px;
   background-color: rgb(1, 157, 196);
   color: var(--text-color);
 }
@@ -172,6 +166,7 @@ footer h3 {
 
 footer p {
   margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 100;
@@ -184,4 +179,20 @@ footer span {
 
 .address {
   margin-top: 5%;
+}
+
+@media (max-width: 380px) {
+  .skew-box {
+    min-height: 80vh;
+  }
+}
+
+@media (min-width: 768px) {
+  figcaption {
+    visibility: hidden;
+  }
+
+  picture {
+    width: 51%;
+  }
 }
