@@ -23,7 +23,7 @@ header {
   transform-origin: top left;
 }
 
-picture {
+figure {
   position: absolute;
   margin: 30px;
   box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
@@ -45,8 +45,12 @@ figcaption {
   font-family: "Playfair Display", serif;
 }
 
+header h3 {
+  visibility: hidden;
+}
+
 .about-me {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -54,7 +58,7 @@ figcaption {
   margin-top: 5px;
 }
 
-.about-me h3 {
+.about-me h4 {
   color: black;
   font-size: 4rem;
 }
@@ -187,12 +191,85 @@ footer span {
   }
 }
 
-@media (min-width: 768px) {
-  figcaption {
-    visibility: hidden;
+@media (min-width: 600px) and (max-width: 1024px) {
+  header {
+    display: block;
   }
 
-  picture {
-    width: 51%;
+  .skew-box {
+    transform: skewY(-11deg);
+    transform-origin: top left;
+    min-height: 35vh;
+  }
+
+  figure {
+    float: left;
+    position: relative;
+    right: 5%;
+    bottom: 10%;
+    transform: scale(150%);
+    width: 30%;
+    box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 65%;
+    left: 75%;
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+
+  .about-me {
+    display: block;
+    position: absolute;
+    top: 10%;
+    bottom: 50%;
+    left: 10%;
+    background-color: rgb(255, 255, 255);
+    height: 40vh;
+    box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
+    margin: 0;
+    width: 80%;
+  }
+
+  .about-me h4 {
+    padding-right: 5%;
+    margin-top: 10%;
+    text-align: center;
+    font-weight: 100;
+    font-size: 2.5rem;
+  }
+
+  .about-me p {
+    padding-left: 10%;
+    padding-right: 10%;
+    color: rgb(118, 118, 118);
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 854px) and (max-width: 1024px) {
+  header {
+    min-height: 60vh;
+  }
+
+  figcaption {
+    font-size: 4rem;
+  }
+
+  .skew-box {
+    transform: skewY(-15deg);
+    min-height: 45vh;
+  }
+
+  .about-me h4 {
+    font-size: 3rem;
   }
 }
