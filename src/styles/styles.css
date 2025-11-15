@@ -24,7 +24,6 @@ header {
 }
 
 figure {
-  position: absolute;
   margin: 30px;
   box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
 }
@@ -40,7 +39,7 @@ figcaption {
   position: absolute;
   font-weight: 100;
   transform: translate(5%, -100%);
-  font-size: 4rem;
+  font-size: 3.5rem;
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   font-family: "Playfair Display", serif;
 }
@@ -50,22 +49,23 @@ header h3 {
 }
 
 .about-me {
-  display: block;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  margin-top: -150%;
   gap: 10px;
-  margin: 30px;
-  margin-top: 5px;
 }
 
 .about-me h4 {
   color: black;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .about-me p {
   color: rgb(118, 118, 118);
   font-size: 1.5rem;
+  padding: 0 10%;
 }
 
 .links {
@@ -85,14 +85,18 @@ header h3 {
   transform: scale(110%);
 }
 
-main {
+.projects {
   display: grid;
   grid-template-rows: repeat(auto-fit, 1fr);
+  padding: 0 10%;
+  gap: 30px;
   width: 100%;
   text-align: center;
 }
 
 main h3 {
+  text-align: center;
+  margin-bottom: 5%;
   font-size: 2.5rem;
   font-family: "Playfair Display", serif;
   font-weight: 100;
@@ -102,7 +106,6 @@ main h3 {
   display: flex;
   flex-direction: column;
   min-height: 400px;
-  margin: 30px;
   box-shadow: 0 0 20px rgba(87, 87, 87, 0.5);
 }
 
@@ -189,6 +192,10 @@ footer span {
   .skew-box {
     min-height: 80vh;
   }
+
+  .about-me {
+    margin-top: -140%;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
@@ -202,13 +209,36 @@ footer span {
     min-height: 35vh;
   }
 
+  .about-me {
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: -35% auto 1px auto;
+    background-color: rgb(255, 255, 255);
+    height: 40vh;
+    box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
+    width: 80%;
+  }
+
+  .about-me h4 {
+    padding-top: 10%;
+    padding-right: 4%;
+    text-align: center;
+    font-weight: 100;
+    font-size: 3rem;
+  }
+
+  .about-me p {
+    padding: 5%;
+    color: rgb(118, 118, 118);
+    font-size: 1.2rem;
+  }
+
   figure {
     float: left;
     position: relative;
-    right: 5%;
-    bottom: 10%;
-    transform: scale(150%);
-    width: 30%;
+    margin: -10% 3% 2% -5%;
+    width: 50%;
     box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
   }
 
@@ -222,36 +252,19 @@ footer span {
     position: absolute;
     bottom: 65%;
     left: 75%;
-    font-size: 2rem;
+    font-size: 3rem;
     white-space: nowrap;
   }
 
-  .about-me {
-    display: block;
-    position: absolute;
-    top: 10%;
-    bottom: 50%;
-    left: 10%;
-    background-color: rgb(255, 255, 255);
-    height: 40vh;
-    box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
-    margin: 0;
-    width: 80%;
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0 10% 10% 10%;
   }
 
-  .about-me h4 {
-    padding-right: 5%;
-    margin-top: 10%;
-    text-align: center;
-    font-weight: 100;
-    font-size: 2.5rem;
-  }
-
-  .about-me p {
-    padding-left: 10%;
-    padding-right: 10%;
-    color: rgb(118, 118, 118);
-    font-size: 1.2rem;
+  main h3 {
+    text-align: left;
+    margin: 2% 10%;
   }
 }
 
@@ -269,7 +282,15 @@ footer span {
     min-height: 45vh;
   }
 
+  .about-me {
+    margin-top: -45%;
+  }
+
   .about-me h4 {
     font-size: 3rem;
+  }
+
+  .about-me p {
+    font-size: 1.4rem;
   }
 }
