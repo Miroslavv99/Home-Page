@@ -1,5 +1,6 @@
 :root {
   --main-font: "Roboto", sans-serif;
+  --section-color: rgb(1, 157, 196);
   --text-color: rgb(255, 255, 255);
 }
 
@@ -19,7 +20,7 @@ header {
 
 .skew-box {
   min-height: 70vh;
-  background-color: rgb(1, 157, 196);
+  background-color: --section-color;
   transform: skewY(-40deg);
   transform-origin: top left;
 }
@@ -110,6 +111,12 @@ main h3 {
   flex-direction: column;
   min-height: 400px;
   box-shadow: 0 0 20px rgba(87, 87, 87, 0.5);
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(105%);
 }
 
 .screenshot {
@@ -132,6 +139,11 @@ main h3 {
   font-weight: 600;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+}
+
+.project p {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
 }
 
 .project-links {
@@ -339,12 +351,14 @@ footer figure {
   }
 
   .about-me h4 {
+    text-align: left;
     font-size: 3vw;
+    margin-bottom: 5%;
   }
 
   .about-me p {
     padding: 0;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
   }
 
   .about-me figure {
@@ -358,12 +372,38 @@ footer figure {
 
   .links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    gap: 2%;
     margin-top: 10px;
   }
 
   .links-logo {
     width: 5%;
     transition: transform 0.1s ease-in;
+  }
+
+  main h3 {
+    font-size: 4vw;
+    margin: 0 5% 1% 5%;
+    text-align: left;
+  }
+
+  .projects {
+    padding: 0 5% 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  .project h4 {
+    font-size: 2vw;
+  }
+
+  .project-links {
+    justify-content: end;
+    width: 100%;
+  }
+
+  .projects-logo {
+    width: 25%;
   }
 }
