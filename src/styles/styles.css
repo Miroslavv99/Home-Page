@@ -14,13 +14,12 @@
 header {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   overflow: hidden;
 }
 
 .skew-box {
   min-height: 70vh;
-  background-color: --section-color;
+  background-color: var(--section-color);
   transform: skewY(-40deg);
   transform-origin: top left;
 }
@@ -53,7 +52,6 @@ header h3 {
 .about-me {
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   margin-top: -70vh;
   gap: 10px;
@@ -69,7 +67,7 @@ header h3 {
 .about-me p {
   font-size: 6vw;
   color: rgb(118, 118, 118);
-  padding: 0 10%;
+  padding: 3% 10%;
 }
 
 .links {
@@ -81,7 +79,7 @@ header h3 {
 .links-logo {
   cursor: pointer;
   width: 20%;
-  height: 20%;
+  height: 100%;
   transition: transform 0.1s ease-in;
 }
 
@@ -172,7 +170,8 @@ main h3 {
 
 footer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   min-height: 600px;
   background-color: rgb(1, 157, 196);
 }
@@ -291,13 +290,18 @@ footer figure {
     padding: 0 10% 10% 10%;
   }
 
+  .project h4 {
+    font-size: 3vw;
+  }
+
   main h3 {
     text-align: left;
     margin: 2% 10%;
+    font-size: 5vw;
   }
 
   footer {
-    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   .contact-info {
@@ -307,6 +311,11 @@ footer figure {
   .contact-info h3,
   .contact-info p {
     text-align: left;
+    font-size: 2.5vw;
+  }
+
+  .contact-info h3 {
+    font-size: 6vw;
   }
 
   .contact-info .links {
@@ -405,5 +414,29 @@ footer figure {
 
   .projects-logo {
     width: 25%;
+  }
+
+  footer {
+    flex-wrap: nowrap;
+  }
+
+  footer figure {
+    display: flex;
+    align-items: center;
+    margin: 5%;
+  }
+
+  .contact-info h3,
+  .contact-info p {
+    text-align: left;
+    font-size: 3vw;
+  }
+
+  .contact-info .links {
+    justify-content: flex-start;
+  }
+
+  .contact-info .links-logo {
+    width: 10%;
   }
 }
