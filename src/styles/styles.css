@@ -218,7 +218,7 @@ footer figure {
   }
 
   .about-me {
-    margin-top: -140%;
+    margin-top: -80vh;
   }
 }
 
@@ -439,5 +439,11 @@ footer figure {
 
   .contact-info .links-logo {
     width: 10%;
+  }
+}
+
+@media (max-height: 450px) {
+  .about-me {
+    margin-top: -10vh;
   }
 }
