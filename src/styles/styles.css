@@ -18,8 +18,16 @@ header {
 }
 
 .skew-box {
-  min-height: 70vh;
   background-color: var(--section-color);
+  width: 100vw;
+}
+
+.skew-box::before {
+  content: "";
+  position: absolute;
+  background-color: var(--section-color);
+  width: 100%;
+  height: 70vh;
   transform: skewY(-40deg);
   transform-origin: top left;
 }
@@ -37,6 +45,7 @@ img {
 
 figcaption {
   position: absolute;
+  max-width: 80%;
   transform: translate(5%, -100%);
   font-family: "Playfair Display", serif;
   font-size: 15vw;
@@ -50,10 +59,9 @@ header h3 {
 }
 
 .about-me {
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin-top: -70vh;
   gap: 10px;
 }
 
@@ -212,24 +220,18 @@ footer figure {
   margin-top: 5%;
 }
 
-@media (max-width: 380px) {
-  .skew-box {
-    min-height: 80vh;
-  }
-
-  .about-me {
-    margin-top: -80vh;
-  }
-}
-
 @media (min-width: 600px) and (max-width: 1024px) {
   header {
     display: block;
   }
 
-  .skew-box {
-    min-height: 35vh;
-    transform: skewY(-11deg);
+  .skew-box::before {
+    content: "";
+    position: absolute;
+    background-color: var(--section-color);
+    width: 100%;
+    height: 35vh;
+    transform: skewY(-15deg);
     transform-origin: top left;
   }
 
@@ -237,7 +239,7 @@ footer figure {
     display: block;
     position: relative;
     z-index: 1;
-    margin: -25vh auto auto auto;
+    margin: 12% 12% 0 12%;
     background-color: rgb(255, 255, 255);
     width: 80%;
     height: 50vw;
@@ -274,6 +276,7 @@ footer figure {
 
   figcaption {
     position: absolute;
+    width: 80%;
     bottom: 65%;
     left: 75%;
     font-size: 6vw;
@@ -339,10 +342,13 @@ footer figure {
 }
 
 @media (min-width: 1024px) {
-  .skew-box {
-    min-height: 45vh;
-    background-color: rgb(1, 157, 196);
-    transform: skewY(-7deg);
+  .skew-box::before {
+    content: "";
+    position: absolute;
+    background-color: var(--section-color);
+    width: 100%;
+    height: 60vh;
+    transform: skewY(-8deg);
     transform-origin: top left;
   }
 
@@ -350,7 +356,7 @@ footer figure {
     display: grid;
     height: auto;
     grid-template-columns: 1fr 2fr;
-    margin: -35vh 5% 5% 7%;
+    margin: 5%;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 20px rgba(87, 87, 87, 0.8);
   }
@@ -377,7 +383,8 @@ footer figure {
   }
 
   figcaption {
-    font-size: 3.4vw;
+    width: 130%;
+    font-size: 3.1vw;
   }
 
   .links {
@@ -439,11 +446,5 @@ footer figure {
 
   .contact-info .links-logo {
     width: 10%;
-  }
-}
-
-@media (max-height: 450px) {
-  .about-me {
-    margin-top: -10vh;
   }
 }
